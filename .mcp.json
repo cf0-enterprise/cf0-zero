@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cf0-zero": {
+      "type": "http",
+      "url": "https://api.cf0.ai/mcp"
+    }
+  }
+}

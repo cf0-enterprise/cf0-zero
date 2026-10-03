@@ -1,0 +1,15 @@
+{
+  "name": "cf0-zero",
+  "displayName": "cf0 Zero",
+  "version": "1.0.0",
+  "description": "Talk to Zero, your property management firm's AI assistant in cf0: ask what it is handling, hand it one task about one person on your firm's records, and answer what it is waiting on.",
+  "author": {
+    "name": "cf0",
+    "email": "support@cf0.ai",
+    "url": "https://cf0.ai"
+  },
+  "homepage": "https://cf0.ai/support#assistants",
+  "repository": "https://github.com/cf0-enterprise/cf0-zero",
+  "license": "MIT",
+  "keywords": ["property management", "lettings", "short-term rentals", "maintenance", "tenants", "guests", "owners"]
+}
