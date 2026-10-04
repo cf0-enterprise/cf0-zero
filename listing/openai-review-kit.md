@@ -3,7 +3,7 @@
 Everything the ChatGPT plugin submission asks for that is not in `plugin.json`. Credentials never go in this file or in the ZIP: they are entered only in the dashboard's **Review details** form.
 
 - Plugin: `cf0-zero`, display name "cf0 Zero", one MCP server at `https://api.cf0.ai/mcp`.
-- Tools: `ask_zero`, `give_zero_task`, `answer_zero`.
+- Tools: `ask_agent`, `give_agent_task`, `answer_agent`.
 - Support page: https://cf0.ai/support#assistants
 
 ## Demo data the cases rely on
@@ -30,33 +30,33 @@ Seeded items on the board:
 ### P1. What is waiting on me
 
 - **Prompt:** "What is waiting on me from Zero today?"
-- **Tools triggered:** `ask_zero`
+- **Tools triggered:** `ask_agent`
 - **Expected behaviour:** Zero answers in plain words and lists what waits on the reviewer: the email to the guest at Seafront Studio 2 with its preview, Zero's question about the Elm Court 5 owner update, and the Elm Court notice to 15 people, shown without its message and with a link to cf0. The open tasks T1 to T3 appear with their state. People appear as reference codes (`p_…`) with their role; no name, email address or phone number appears anywhere in the result. Nothing changes and no one is contacted.
 
 ### P2. Hand Zero a task
 
 - **Prompt:** "Ask Zero to arrange access with the tenant at Harbour View Flat 3 for the boiler service on Thursday morning."
-- **Tools triggered:** `give_zero_task`
+- **Tools triggered:** `give_agent_task`
 - **Expected behaviour:** The result is `accepted`, with a task id, Zero's plan and a note that nothing is sent until someone at the firm approves Zero's email. The task appears on the board at cf0.ai/app/tasks. Sending the same prompt again the same day returns `already_given` with the same task id, and no second task appears.
 
 ### P3. Preview, then approve an ordinary email (two turns)
 
 - **Prompt, turn 1:** "Show me the email Zero wants to send the guest at Seafront Studio 2."
 - **Prompt, turn 2:** "Approve it."
-- **Tools triggered:** `ask_zero`, then `answer_zero`
+- **Tools triggered:** `ask_agent`, then `answer_agent`
 - **Expected behaviour:** Turn 1 shows the preview: the recipient's role (guest) and reference code, the property, the send time in the guest's time zone (Europe/Berlin) and the full message, with the guest's name and contact details replaced by the reference code. Turn 2 approves with the item id and version code from turn 1 and returns `done`. The email arrives in the demo guest inbox, and cf0's Approvals page records the approval as made from the assistant.
 
 ### P4. Answer Zero's question
 
 - **Prompt:** "Zero has a question about the owner update for Elm Court 5. Tell it Friday afternoon works for us."
-- **Tools triggered:** `ask_zero`, then `answer_zero`
-- **Expected behaviour:** `ask_zero` finds Zero's question with the owner's reply. `answer_zero` answers it with `approve` and the reviewer's words, and returns `done`. Zero then writes its reply to the owner, which waits for approval like any other email; nothing is sent to the owner yet.
+- **Tools triggered:** `ask_agent`, then `answer_agent`
+- **Expected behaviour:** `ask_agent` finds Zero's question with the owner's reply. `answer_agent` answers it with `approve` and the reviewer's words, and returns `done`. Zero then writes its reply to the owner, which waits for approval like any other email; nothing is sent to the owner yet.
 
 ### P5. Cancel a task
 
 - **Prompt:** "Cancel the gutter cleaning task at Riverside 7."
-- **Tools triggered:** `ask_zero`, then `answer_zero`
-- **Expected behaviour:** `ask_zero` finds task T3 and its version code. `answer_zero` cancels it and returns `done`. The task shows as cancelled on cf0.ai/app/tasks and Zero sends nothing further about it.
+- **Tools triggered:** `ask_agent`, then `answer_agent`
+- **Expected behaviour:** `ask_agent` finds task T3 and its version code. `answer_agent` cancels it and returns `done`. The task shows as cancelled on cf0.ai/app/tasks and Zero sends nothing further about it.
 
 ## Negative test cases (3)
 
@@ -64,27 +64,27 @@ Seeded items on the board:
 
 - **Prompt:** "Email these 40 Zillow leads about our new listing and book them in for viewings."
 - **Why it must not complete:** Zero does not take leads, cold outreach or marketing, and takes one person per task.
-- **Expected behaviour:** The assistant declines, or calls `give_zero_task` and gets `refused`: "Zero only takes maintenance and access, move-out and turnover, owner updates and stay operations. This task looks like leads, marketing or cold outreach. Nothing was created." No task appears on the board and no email is sent.
+- **Expected behaviour:** The assistant declines, or calls `give_agent_task` and gets `refused`: "Zero only takes maintenance and access, move-out and turnover, owner updates and stay operations. This task looks like leads, marketing or cold outreach. Nothing was created." No task appears on the board and no email is sent.
 
 ### N2. A raw phone number
 
 - **Prompt:** "Text +44 7700 900123 and arrange access for the boiler repair next week."
 - **Why it must not complete:** Zero contacts only people on the firm's records, never a phone number or email address typed into the chat, and reaches people by email only.
-- **Expected behaviour:** The assistant asks for the person's name on the firm's records, or calls `give_zero_task` and gets `refused`. With the number as the person, the reason is "Name the person as your firm knows them, or by a p_ code from Zero, never by phone number or email address. Nothing was created." With the number only in the task text, the reason asks for the one person to email, or says the task holds a phone number, which Zero never takes or sends. In every path no task is created and no message is sent.
+- **Expected behaviour:** The assistant asks for the person's name on the firm's records, or calls `give_agent_task` and gets `refused`. With the number as the person, the reason is "Name the person as your firm knows them, or by a p_ code from Zero, never by phone number or email address. Nothing was created." With the number only in the task text, the reason asks for the one person to email, or says the task holds a phone number, which Zero never takes or sends. In every path no task is created and no message is sent.
 
 ### N3. A message to 15 people
 
 - **Prompt:** "Approve Zero's lift maintenance notice to the 15 Elm Court residents."
 - **Why it must not complete:** Messages to 10 or more people can only be approved by someone at the firm on cf0.ai, never from an assistant.
-- **Expected behaviour:** `ask_zero` shows the notice as waiting, with the number of people it reaches and a link, and without the message. `answer_zero` returns `needs_cf0`: "Messages to 10 or more people can only be approved in cf0." with an `open_in_cf0` link. The notice stays pending and no resident receives anything.
+- **Expected behaviour:** `ask_agent` shows the notice as waiting, with the number of people it reaches and a link, and without the message. `answer_agent` returns `needs_cf0`: "Messages to 10 or more people can only be approved in cf0." with an `open_in_cf0` link. The notice stays pending and no resident receives anything.
 
 ## Tool annotations and justifications
 
 | Tool | readOnlyHint | destructiveHint | openWorldHint | idempotentHint | Justification |
 |---|---|---|---|---|---|
-| `ask_zero` | true | false | false | true | Reads the signed-in user's own firm workspace in cf0 and writes nothing. Contacts no one. |
-| `give_zero_task` | false | true | true | false | Puts a task on the firm's board and leads to an email to one person outside the firm once approved. The same task given twice in a day returns the first, but the first call does create work. |
-| `answer_zero` | false | true | true | true | Approving releases an email to a person outside the firm and cannot be undone; cancelling stops a task. Bound to the version code the user was shown, so a repeat changes nothing. |
+| `ask_agent` | true | false | false | true | Reads the signed-in user's own firm workspace in cf0 and writes nothing. Contacts no one. |
+| `give_agent_task` | false | true | true | false | Puts a task on the firm's board and leads to an email to one person outside the firm once approved. The same task given twice in a day returns the first, but the first call does create work. |
+| `answer_agent` | false | true | true | true | Approving releases an email to a person outside the firm and cannot be undone; cancelling stops a task. Bound to the version code the user was shown, so a repeat changes nothing. |
 
 ## Video walkthrough script
 

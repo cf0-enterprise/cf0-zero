@@ -44,7 +44,7 @@ On 2026-10-02 Luca emailed `mcp-review@anthropic.com` from luca@cf0.ai to ask wh
 
 **What users need before they connect:** a cf0 account as a member of a firm cf0 has approved. Giving Zero tasks also needs an admin to set up billing and Zero's mailbox on cf0.ai.
 
-**Reads or writes:** both. `ask_zero` reads; `give_zero_task` and `answer_zero` write.
+**Reads or writes:** both. `ask_agent` reads; `give_agent_task` and `answer_agent` write.
 
 **Authentication:** OAuth with client ID metadata documents (CIMD). The authorization server is Clerk at `https://clerk.cf0.ai`, named in the protected-resource metadata at `https://api.cf0.ai/.well-known/oauth-protected-resource/mcp`. Scopes: `openid email profile user:org:read offline_access`.
 

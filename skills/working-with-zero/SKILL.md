@@ -1,6 +1,6 @@
 ---
 name: working-with-zero
-description: How to work with Zero, a property management firm's AI assistant in cf0, through ask_zero, give_zero_task and answer_zero. Use when the user asks what Zero is doing or what is waiting on them, wants to hand Zero a task about a tenant, guest or owner, or wants to approve, decline or answer something Zero is waiting on.
+description: How to work with Zero, a property management firm's AI assistant in cf0, through ask_agent, give_agent_task and answer_agent. Use when the user asks what Zero is doing or what is waiting on them, wants to hand Zero a task about a tenant, guest or owner, or wants to approve, decline or answer something Zero is waiting on.
 ---
 
 # Working with Zero
@@ -9,21 +9,21 @@ Zero is the AI assistant of the user's property management firm in cf0. Zero's w
 
 | Tool | What it does | Changes anything? |
 |---|---|---|
-| `ask_zero` | Reads Zero's board: its tasks, the actions waiting for approval and the questions Zero asked the user | No. It contacts no one |
-| `give_zero_task` | Hands Zero one task about one person on the firm's records | Yes. Zero puts it on the board and drafts one email |
-| `answer_zero` | Approves or declines a proposed action, answers Zero's question, or cancels a task | Yes |
+| `ask_agent` | Reads Zero's board: its tasks, the actions waiting for approval and the questions Zero asked the user | No. It contacts no one |
+| `give_agent_task` | Hands Zero one task about one person on the firm's records | Yes. Zero puts it on the board and drafts one email |
+| `answer_agent` | Approves or declines a proposed action, answers Zero's question, or cancels a task | Yes |
 
 ## Reading Zero's work
 
-Use `ask_zero` for any question about Zero's work: what is open, what is waiting on the user, where one task stands. Pass the user's question in their own words. Pass `task_id` when the user means a task from an earlier answer.
+Use `ask_agent` for any question about Zero's work: what is open, what is waiting on the user, where one task stands. Pass the user's question in their own words. Pass `task_id` when the user means a task from an earlier answer.
 
 People appear as reference codes such as `p_k7mq2xrb4a`, with their role (tenant, guest, owner). Email addresses, phone numbers and access codes are hidden. Show the codes as they come. Do not guess or ask for the real names or contact details behind them.
 
-Each item in the answer carries an item id and a version code. Keep them: `answer_zero` needs both, taken from Zero's latest answer.
+Each item in the answer carries an item id and a version code. Keep them: `answer_agent` needs both, taken from Zero's latest answer.
 
 ## Handing Zero a task
 
-Use `give_zero_task` when the user wants Zero to do something with one person on the firm's records.
+Use `give_agent_task` when the user wants Zero to do something with one person on the firm's records.
 
 - `task`: what the user wants done and what counts as done, as they would tell a colleague.
 - `people`: at most one entry, the person's name as the firm's records have it or a `p_` code from an earlier answer. Never a phone number or email address, even if the user typed one; ask the user for the person's name on record instead.
@@ -44,7 +44,7 @@ The result's `status` says what happened:
 
 ## Answering Zero
 
-Use `answer_zero` only for an item the user has seen in Zero's latest answer, and only with the decision the user stated.
+Use `answer_agent` only for an item the user has seen in Zero's latest answer, and only with the decision the user stated.
 
 - `item_kind`: `approval`, `question` or `task`.
 - `item_id` and `version`: from that answer, unchanged.
@@ -60,7 +60,7 @@ Tasks take `cancel`. Zero stops work on the task.
 The result's `status`:
 
 - `done`: show the `result`.
-- `changed_since_shown`: the item changed after the user saw it. Ask Zero again with `ask_zero` and show the new version before answering.
+- `changed_since_shown`: the item changed after the user saw it. Ask Zero again with `ask_agent` and show the new version before answering.
 - `needs_cf0`: this can only be decided on cf0.ai, such as a message to 10 or more people, a document or sensitive content. Show the `result` and the `open_in_cf0` link. Do not try another way.
 - `not_allowed`: the user cannot answer this item, for example because only an admin or a named approver can approve. Show the `result`.
 - `already_answered`: someone already answered it. Show the `result`.

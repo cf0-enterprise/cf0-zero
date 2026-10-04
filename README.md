@@ -4,9 +4,9 @@ cf0 Zero lets staff at a property management firm talk to Zero, their firm's AI 
 
 ## What it does
 
-- **Ask Zero** (`ask_zero`, read-only): what Zero is handling, what is waiting on you, and where a task, person or property stands. It changes nothing and contacts no one.
-- **Give Zero a task** (`give_zero_task`): hand Zero one task about one person already on your firm's records, such as arranging access with a tenant for a repair visit, confirming a check-out time with a guest or telling an owner about booked work. Zero drafts one email from your firm's own Zero mailbox and sends it only after someone at your firm approves it.
-- **Answer Zero** (`answer_zero`): approve or decline an ordinary email after a preview, answer a question Zero asked about your task, or cancel a task.
+- **Ask Zero** (`ask_agent`, read-only): what Zero is handling, what is waiting on you, and where a task, person or property stands. It changes nothing and contacts no one.
+- **Give Zero a task** (`give_agent_task`): hand Zero one task about one person already on your firm's records, such as arranging access with a tenant for a repair visit, confirming a check-out time with a guest or telling an owner about booked work. Zero drafts one email from your firm's own Zero mailbox and sends it only after someone at your firm approves it.
+- **Answer Zero** (`answer_agent`): approve or decline an ordinary email after a preview, answer a question Zero asked about your task, or cancel a task.
 
 People appear as reference codes such as `p_k7mq2xrb4a` with their role, never with names or contact details. Zero never takes leads, cold outreach, marketing, tenant screening, rent or arrears, payments or emergencies. Messages to 10 or more people, documents and sensitive content can only be approved on cf0.ai.
 
