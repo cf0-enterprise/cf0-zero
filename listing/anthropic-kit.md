@@ -36,7 +36,7 @@ On 2026-10-02 Luca emailed `mcp-review@anthropic.com` from luca@cf0.ai to ask wh
 >
 > Hand Zero one task about one person already on your firm's records, such as arranging access with a tenant for a repair visit, confirming a check-out time with a guest, or telling an owner about booked work. Zero drafts one email from your firm's own Zero mailbox and sends it only after someone at your firm approves it.
 >
-> Answer what Zero is waiting on: approve or decline an ordinary email after a preview of the person's role, the property, the send time in their time zone and the full message; answer a question Zero asked about your task; or cancel a task.
+> Answer what Zero is waiting on: approve or decline an ordinary email after a preview of the person's role, the property, the send time in your firm's time zone and the full message; answer a question Zero asked about your task; or cancel a task.
 >
 > People appear as reference codes with their role, never with names or contact details. Zero never uses a phone number or email address typed into the chat, and never takes leads, cold outreach, marketing, tenant screening, rent or arrears, payments or emergencies. Messages to 10 or more people, documents and sensitive content are approved only on cf0.ai.
 
@@ -64,7 +64,7 @@ The expected result of each is in `openai-review-kit.md` (P1 to P5), and three r
 
 - **Firm:** cf0 Demo Lettings, a standard test account with synthetic sample data (the records and seeded items listed in `openai-review-kit.md`). The Claude reviewer has its own recipient set of cf0-owned inboxes, separate from the ChatGPT reviewer's, so no review run reaches a real person.
 - **User:** a Clerk user on cf0 production who is an admin of cf0 Demo Lettings and one of its named approvers, because approving an action needs an admin.
-- **Sign-in:** https://cf0.ai/app/auth/login with email and password. No MFA, no email or SMS code, no magic link.
+- **Sign-in:** https://cf0.ai/login with email and password. No MFA, no email or SMS code, no magic link.
 - **Steps for the reviewer:** in Claude, open Customize, then Connectors, choose Add custom connector and paste `https://api.cf0.ai/mcp` (or add cf0 Zero from the directory once it is listed). Sign in with the test account, choose cf0 Demo Lettings on the consent screen if asked, then try the example prompts.
 - **Where credentials live:** only in the Test & launch step. Louis rotates the password after each review.
 - **Tools run before submitting:** confirm each of the three tools ran from a Claude conversation against the demo firm, as the Test & launch step asks.

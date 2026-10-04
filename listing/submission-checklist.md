@@ -5,12 +5,12 @@ For Luca and Louis. Work top to bottom; each line names its owner. Founder decis
 ## 1. Before either submission
 
 - [ ] **Louis:** PR cf0-enterprise/cf0#326 merged and deployed, with the `v2-staff-agent` Durable Object migration and the rate-limit namespaces.
-- [ ] **Luca:** Clerk production: CIMD on, consent screen, JWT access tokens and scopes, and the `zero` template claim `cf0_use: "web"` live for at least one token lifetime before the deploy.
+- [ ] **Luca:** Clerk production: run `./c auth-config diff`, then `./c auth-config apply prod -y` to apply the OAuth application settings in `apps/api/auth-config.json` (client metadata documents on, `aud` claim on, dynamic registration off). Check the consent screen and the scopes `openid email profile user:org:read offline_access`. No JWT template change is needed (door decision, clause 5).
 - [ ] **Louis:** create the public repository `cf0-enterprise/cf0-zero`, then push this local repository's `main` to it. Check that no `.DS_Store` file is committed.
 - [ ] **Louis and Luca:** the demo firm cf0 Demo Lettings (build map T9.2): approved, account set up by ops so no checkout shows, Zero's mailbox ready, the records and seeded items in `openai-review-kit.md`, and the Email Routing catch-all on the demo contacts subdomain delivering to a cf0 inbox.
 - [ ] **Louis:** two reviewer users (one for OpenAI, one for Anthropic), each an admin and named approver of the demo firm, password only. Prove each signs in from a fresh browser with no code.
 - [ ] **Louis:** set the OpenAI domain challenge variable so `curl https://api.cf0.ai/.well-known/openai-apps-challenge` returns the dashboard's token exactly (T9.4).
-- [ ] **Agent or Louis:** the probe suites `review` and `gates` exit 0 against production (T9.3). They are not built yet: on 2026-10-02 `./c assistant-probe` has no such suites and accepts only local URLs.
+- [ ] **Agent or Louis:** with `CF0_BILLING=stub` and the reach variables, run `./c demo-firm`, then `./c assistant-probe --suite review` and `--suite gates` (`--url http://localhost:<port>/mcp --stub-port <port>`). Both exit 0. Both write local D1, so they never run against production. Then do the manual production smoke in listing decision clause 7.
 - [ ] **Luca:** counsel's written sign-off on the listing questions, the terms section 10 rewrite and the privacy update (T8.3). T9.6 depends on it in the build map; decide whether L1 waives it.
 - [ ] **Anyone:** in this repository, run `claude plugin validate .` (expect "Validation passed") and `scripts/check-no-price.sh` (expect 8 fixtures caught and 0 hits).
 - [ ] **Luca:** pages live and identical in wording to the listing: https://cf0.ai/support#assistants, https://cf0.ai/privacy, https://cf0.ai/terms. No price on any of them during the price test (Q5).

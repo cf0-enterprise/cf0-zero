@@ -13,7 +13,7 @@ The reviewer signs in to the demo firm **cf0 Demo Lettings** (build map T9.2). O
 | Record | Role | Property | Used by |
 |---|---|---|---|
 | Maya Lindqvist | tenant | Harbour View, Flat 3 | P2 |
-| Tom Becker | guest, time zone Europe/Berlin | Seafront Studio 2 | P3 |
+| Tom Becker | guest | Seafront Studio 2 | P3 |
 | Priya Nair | owner | Elm Court 5 | P4 |
 | Sam Okafor | tenant | Riverside 7 | P5 |
 | 15 residents | tenants | Elm Court | N3 |
@@ -44,7 +44,7 @@ Seeded items on the board:
 - **Prompt, turn 1:** "Show me the email Zero wants to send the guest at Seafront Studio 2."
 - **Prompt, turn 2:** "Approve it."
 - **Tools triggered:** `ask_agent`, then `answer_agent`
-- **Expected behaviour:** Turn 1 shows the preview: the recipient's role (guest) and reference code, the property, the send time in the guest's time zone (Europe/Berlin) and the full message, with the guest's name and contact details replaced by the reference code. Turn 2 approves with the item id and version code from turn 1 and returns `done`. The email arrives in the demo guest inbox, and cf0's Approvals page records the approval as made from the assistant.
+- **Expected behaviour:** Turn 1 shows the preview: the recipient's role (guest) and reference code, the property, the send time in the firm's time zone (Europe/London) and the full message, with the guest's name and contact details replaced by the reference code. Turn 2 approves with the item id and version code from turn 1 and returns `done`. The email arrives in the demo guest inbox, and cf0's Approvals page records the approval as made from the assistant.
 
 ### P4. Answer Zero's question
 
@@ -105,7 +105,7 @@ Upload the recording somewhere the reviewer can open without signing in, and pas
 ## Reviewer account notes (no secrets)
 
 - **Accounts:** two Clerk users on cf0 production, each an admin of cf0 Demo Lettings and one of its named approvers, because approving an action needs an admin. One is for OpenAI, one for Anthropic.
-- **Sign-in:** https://cf0.ai/app/auth/login with email and password. No MFA, no email or SMS code, no magic link, no new-device check. Proved in a fresh browser before each submission (build map T9.2).
+- **Sign-in:** https://cf0.ai/login with email and password. No MFA, no email or SMS code, no magic link, no new-device check. Proved in a fresh browser before each submission (build map T9.2).
 - **Connect flow:** the assistant opens cf0's sign-in, then a consent screen; pick **cf0 Demo Lettings** if asked for an organisation.
 - **Where credentials live:** only in the OpenAI dashboard's Review details form and the Anthropic portal's Test & launch step. Never in this repository, the ZIP or email.
 - **Rotation:** Louis rotates both passwords after each review and updates the dashboards.

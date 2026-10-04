@@ -26,7 +26,7 @@ Each item in the answer carries an item id and a version code. Keep them: `answe
 Use `give_agent_task` when the user wants Zero to do something with one person on the firm's records.
 
 - `task`: what the user wants done and what counts as done, as they would tell a colleague.
-- `people`: at most one entry, the person's name as the firm's records have it or a `p_` code from an earlier answer. Never a phone number or email address, even if the user typed one; ask the user for the person's name on record instead.
+- `people`: exactly one entry, the person's name as the firm's records have it or a `p_` code from an earlier answer. Never a phone number or email address, even if the user typed one; ask the user for the person's name on record instead.
 - `property`: the firm's name for the property or unit, when the user gave one.
 - `deadline`: an ISO 8601 date or time, when the user gave one.
 
@@ -51,7 +51,7 @@ Use `answer_agent` only for an item the user has seen in Zero's latest answer, a
 - `decision`: `approve`, `decline`, `change` or `cancel`.
 - `message`: the user's own words. Required for `change`, and for a question that asks what Zero should tell the person.
 
-Before an approval, show the user the item's preview in full: the person's role and reference code, the property, the send time in the person's time zone and the full message. Ask the user to confirm. Approving lets Zero send straight away.
+Before an approval, show the user the item's preview in full: the person's role and reference code, the property, the send time in your firm's time zone and the full message. Ask the user to confirm. Approving lets Zero send straight away.
 
 Questions take `approve` (agree, or yes), `decline` (no) or `change` (the user's own answer). Zero then writes its reply to the person, and that reply waits for approval like any other email.
 
