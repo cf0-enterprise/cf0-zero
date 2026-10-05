@@ -38,7 +38,7 @@ On 2026-10-02 Luca emailed `mcp-review@anthropic.com` from luca@cf0.ai to ask wh
 >
 > Answer what Zero is waiting on: approve or decline an ordinary email after a preview of the person's role, the property, the send time in your firm's time zone and the full message; answer a question Zero asked about your task; or cancel a task.
 >
-> People appear as reference codes with their role, never with names or contact details. Zero never uses a phone number or email address typed into the chat, and never takes leads, cold outreach, marketing, tenant screening, rent or arrears, payments or emergencies. Messages to 10 or more people, documents and sensitive content are approved only on cf0.ai.
+> People on your firm's records appear as reference codes with their role, and contact details and access codes are hidden. A name that is not on your firm's records, such as one typed into the chat, is passed back as written. Zero never uses a phone number or email address typed into the chat, and never takes leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. Messages to 10 or more people, documents and sensitive content are approved only on cf0.ai.
 
 **Use cases:** checking what Zero is doing and what waits on you; handing Zero maintenance and access, move-out and turnover, owner update and stay operation tasks; approving Zero's ordinary emails; answering Zero's questions; cancelling tasks.
 
