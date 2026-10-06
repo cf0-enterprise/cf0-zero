@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cf0-zero",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Talk to Zero, your property management firm's AI assistant in cf0: ask what it is handling, hand it one task about one person on your firm's records, and answer what it is waiting on.",
   "author": {
     "name": "cf0",

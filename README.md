@@ -17,7 +17,7 @@ People on your firm's records appear as reference codes such as `p_k7mq2xrb4a` w
 | `plugin.json`, `mcp.json` | Agent Plugins manifest and MCP server for ChatGPT and Codex |
 | `.claude-plugin/plugin.json`, `.mcp.json` | Plugin manifest and MCP server for Claude |
 | `skills/working-with-zero/SKILL.md` | Guidance for using the three tools |
-| `assets/` | cf0 logos, light and dark |
+| `assets/` | Zero logos and composer icons, light and dark |
 | `listing/` | Directory submission material; not loaded by the plugin |
 | `scripts/` | Repository checks; not loaded by the plugin |
 
