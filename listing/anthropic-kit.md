@@ -18,7 +18,7 @@ On 2026-10-02 Luca emailed `mcp-review@anthropic.com` from luca@cf0.ai to ask wh
 | Field | Value |
 |---|---|
 | Server name (max 100) | cf0 Zero |
-| One-liner (max 200) | Ask your property management firm's AI assistant, Zero, what it is handling, hand it one task about one person on your records, and answer what it is waiting on. |
+| One-liner (max 200) | Zero is your firm's AI property manager in cf0. See what it is handling, hand it a task about a tenant, guest or owner, and approve its emails before they go out. |
 | Categories | Productivity; Business (check the portal's list) |
 | Documentation URL | https://cf0.ai/support#assistants |
 | Privacy policy URL | https://cf0.ai/privacy |
@@ -30,17 +30,19 @@ On 2026-10-02 Luca emailed `mcp-review@anthropic.com` from luca@cf0.ai to ask wh
 
 **Description (max 2,000):**
 
-> cf0 Zero connects your firm's Zero, the AI assistant in cf0, to Claude. It is for staff at property management, lettings and short-term rental firms that work in cf0.
+> Zero is an AI property manager, an AI employee that works inside cf0 for property management, lettings and short-term rental firms. In cf0, Zero handles your firm's inbound messages and keeps its work on your firm's task board. This connector lets your team work with Zero from Claude.
 >
-> Ask Zero what it is handling, what is waiting on you, and where a task stands. Asking changes nothing and contacts no one.
+> Ask Zero what it is handling, what is waiting on you and where a task stands. Asking changes nothing and contacts no one.
 >
-> Hand Zero one task about one person already on your firm's records, such as arranging access with a tenant for a repair visit, confirming a check-out time with a guest, or telling an owner about booked work. Zero drafts one email from your firm's own Zero mailbox and sends it only after someone at your firm approves it.
+> Hand Zero the follow-ups your team would otherwise chase by email: arranging access with a tenant for a repair, confirming a check-out time with a guest, or telling an owner about booked work. Each task is about one person on your firm's records. Zero plans it and drafts an email from your firm's own Zero mailbox. Someone at your firm previews and approves the email, in chat or on cf0.ai, and nothing is sent before that. Zero then sends it, reads the reply and closes the task once the person confirms. If they suggest a different time or ask something only your team can answer, Zero asks you first and drafts its reply for your approval.
 >
-> Answer what Zero is waiting on: approve or decline an ordinary email after a preview of the person's role, the property, the send time in your firm's time zone and the full message; answer a question Zero asked about your task; or cancel a task.
+> Every task stays on your firm's board in cf0, with a record of what Zero sent and what is still open.
 >
-> People on your firm's records appear as reference codes with their role, and contact details and access codes are hidden. A name that is not on your firm's records, such as one typed into the chat, is passed back as written. Zero never uses a phone number or email address typed into the chat, and never takes leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. Messages to 10 or more people, documents and sensitive content are approved only on cf0.ai.
+> Zero takes maintenance and access, move-out and turnover, owner updates and stay operations. It does not take leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. People on your records appear as reference codes with their role, and their contact details and access codes stay hidden. Zero never uses a phone number or email address typed into the chat, and it reaches people by email only. Messages to 10 or more people, documents and sensitive content can only be approved on cf0.ai.
+>
+> You need a cf0 account as a member of a firm cf0 has approved. Before Zero can take tasks, an admin sets up billing and Zero's mailbox on cf0.ai.
 
-**Use cases:** checking what Zero is doing and what waits on you; handing Zero maintenance and access, move-out and turnover, owner update and stay operation tasks; approving Zero's ordinary emails; answering Zero's questions; cancelling tasks.
+**Use cases:** checking what Zero is doing and what waits on you; handing Zero maintenance and access, move-out and turnover, owner update and stay operation tasks; approving Zero's emails; answering Zero's questions; cancelling tasks.
 
 **What users need before they connect:** a cf0 account as a member of a firm cf0 has approved. Giving Zero tasks also needs an admin to set up billing and Zero's mailbox on cf0.ai.
 

@@ -1,7 +1,7 @@
 {
   "name": "cf0-zero",
   "displayName": "cf0 Zero",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Zero is your firm's AI property manager in cf0. See what it is handling, hand it a task about a tenant, guest or owner, and approve its emails before they go out.",
   "author": {
     "name": "cf0",

@@ -90,7 +90,7 @@ Seeded items on the board:
 
 About four minutes, recorded in a ChatGPT Business workspace with developer mode on and the reviewer account. Show no billing page and no checkout.
 
-1. **0:00 to 0:20. Context.** cf0.ai/app/tasks for cf0 Demo Lettings, showing T1 to T3 and the waiting items. Voice-over: "Zero is a property management firm's AI assistant in cf0. This plugin lets staff talk to it from ChatGPT."
+1. **0:00 to 0:20. Context.** cf0.ai/app/tasks for cf0 Demo Lettings, showing T1 to T3 and the waiting items. Voice-over: "Zero is the firm's AI property manager in cf0. This plugin lets staff work with it from ChatGPT."
 2. **0:20 to 0:50. Connect.** Add cf0 Zero, sign in with the reviewer's password (no code), pick cf0 Demo Lettings on the consent screen, return to ChatGPT.
 3. **0:50 to 1:20. P1.** Ask what is waiting. Point at the reference codes and that no name or contact detail appears.
 4. **1:20 to 1:50. P2.** Hand Zero the Harbour View task. Show the plan, then the new task on cf0.ai/app/tasks. Repeat the prompt to show `already_given`.
