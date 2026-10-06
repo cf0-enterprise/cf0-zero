@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cf0-zero",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Zero is your firm's AI property manager in cf0. See what it is handling, hand it a task about a tenant, guest or owner, and approve its emails before they go out.",
   "author": {
     "name": "cf0",

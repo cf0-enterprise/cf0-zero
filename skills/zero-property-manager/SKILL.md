@@ -1,11 +1,11 @@
 ---
-name: working-with-zero
-description: How to work with Zero, a property management firm's AI assistant in cf0, through ask_agent, give_agent_task and answer_agent. Use when the user asks what Zero is doing or what is waiting on them, wants to hand Zero a task about a tenant, guest or owner, or wants to approve, decline or answer something Zero is waiting on.
+name: zero-property-manager
+description: Work with Zero, your firm's AI property manager in cf0. Use it when someone asks what Zero is doing or what is waiting on them, wants Zero to handle a task with a tenant, guest or owner, or wants to approve, decline or answer something Zero is waiting on.
 ---
 
-# Working with Zero
+# Zero, your AI property manager
 
-Zero is the AI assistant of the user's property management firm in cf0. Zero's work lives on the firm's task board in cf0, with the same approvals and the same record of what it sent. These three tools are the only way to reach it from here.
+Zero is the AI property manager of the user's firm in cf0, an AI employee that does the firm's follow-ups. Its work lives on the firm's task board in cf0, with the same approvals and the same record of what it sent. These three tools are the only way to reach it from here.
 
 | Tool | What it does | Changes anything? |
 |---|---|---|

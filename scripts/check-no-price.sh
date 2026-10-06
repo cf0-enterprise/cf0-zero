@@ -29,13 +29,13 @@ copy_scope() {
 inject() {
   local dir="$1" fixture="$2"
   case "$fixture" in
-    skill-dollar) printf '\nEach task Zero completes costs $3.\n' >>"$dir/skills/working-with-zero/SKILL.md" ;;
+    skill-dollar) printf '\nEach task Zero completes costs $3.\n' >>"$dir/skills/zero-property-manager/SKILL.md" ;;
     readme-trial) printf '\nStart a free trial today.\n' >>"$dir/README.md" ;;
     manifest-price) sed -i.bak 's/"shortDescription": "[^"]*"/"shortDescription": "See the price per task"/' "$dir/plugin.json" ;;
     manifest-discount) sed -i.bak '1,/"description": "/s/"description": "/"description": "Save with a launch discount. /' "$dir/plugin.json" ;;
     commerce-dollar) sed -i.bak 's/"commerce_description": "/"commerce_description": "Tasks are $3 each. /' "$dir/plugin.json" ;;
     readme-euro) printf '\nZero costs €9 a month.\n' >>"$dir/README.md" ;;
-    skill-usd) printf '\nTasks are billed at USD 3.\n' >>"$dir/skills/working-with-zero/SKILL.md" ;;
+    skill-usd) printf '\nTasks are billed at USD 3.\n' >>"$dir/skills/zero-property-manager/SKILL.md" ;;
     claude-manifest-price) sed -i.bak '1,/"description": "/s/"description": "/"description": "Fair pricing. /' "$dir/.claude-plugin/plugin.json" ;;
   esac
   rm -f "$dir/plugin.json.bak" "$dir/.claude-plugin/plugin.json.bak"
