@@ -62,9 +62,9 @@ The expected result of each is in `openai-review-kit.md` (P1 to P5), and three r
 
 ## Test account notes (Policy 3.D)
 
-- **Firm:** cf0 Demo Lettings, a standard test account with synthetic sample data (the records and seeded items listed in `openai-review-kit.md`). The Claude reviewer has its own recipient set of cf0-owned inboxes, separate from the ChatGPT reviewer's, so no review run reaches a real person.
+- **Firm:** cf0 Demo Lettings, a standard test account with synthetic sample data (the records and seeded items listed in `openai-review-kit.md`). The Claude reviewer has its own firm and its own cf0-owned domain (`contacts-claude.cf0.ai`), separate from the ChatGPT reviewer's, so no review run reaches a real person.
 - **User:** a Clerk user on cf0 production who is an admin of cf0 Demo Lettings and one of its named approvers, because approving an action needs an admin.
-- **Sign-in:** https://cf0.ai/login with email and password. No MFA, no email or SMS code, no magic link.
+- **Sign-in:** https://cf0.ai/login with email and password. No MFA, no email or SMS code, no magic link. Cloudflare may show a "Verify you are human" box after the email; a person ticks it.
 - **Steps for the reviewer:** in Claude, open Customize, then Connectors, choose Add custom connector and paste `https://api.cf0.ai/mcp` (or add cf0 Zero from the directory once it is listed). Sign in with the test account, choose cf0 Demo Lettings on the consent screen if asked, then try the example prompts.
 - **Where credentials live:** only in the Test & launch step. Louis rotates the password after each review.
 - **Tools run before submitting:** confirm each of the three tools ran from a Claude conversation against the demo firm, as the Test & launch step asks.

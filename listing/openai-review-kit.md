@@ -1,6 +1,6 @@
 # OpenAI review kit: cf0 Zero
 
-Everything the ChatGPT plugin submission asks for that is not in `plugin.json`. Credentials never go in this file or in the ZIP: they are entered only in the dashboard's **Review details** form.
+What the ChatGPT plugin submission asks for, and why. The five positive and three negative cases, the countries and the release notes are also in `plugin.json`, so the ZIP upload imports them; this file is their source. Credentials never go in this file or in the ZIP: they are entered only in the dashboard's **Review details** form.
 
 - Plugin: `cf0-zero`, display name "cf0 Zero", one MCP server at `https://api.cf0.ai/mcp`.
 - Tools: `ask_agent`, `give_agent_task`, `answer_agent`.
@@ -8,7 +8,7 @@ Everything the ChatGPT plugin submission asks for that is not in `plugin.json`. 
 
 ## Demo data the cases rely on
 
-The reviewer signs in to the demo firm **cf0 Demo Lettings** (build map T9.2). Ops seeds these records before each review. Every email address on them is a cf0-owned inbox on the demo contacts subdomain, so a review run never reaches a real person. The ChatGPT reviewers get their own recipient set, separate from the Claude reviewers', so two reviews running at once never share an inbox.
+The reviewer signs in to the demo firm **cf0 Demo Lettings** (build map T9.2). Ops seeds these records before each review. Every email address on them is on a cf0-owned domain, so a review run never reaches a real person. The ChatGPT reviewer has its own firm and its own domain (`contacts-chatgpt.cf0.ai`), separate from the Claude reviewer's (`contacts-claude.cf0.ai`), so two reviews running at once never share a firm or an address. The guest and the owner have live inboxes on that domain, because P3 sends to the guest and the owner's reply sets up P4.
 
 | Record | Role | Property | Used by |
 |---|---|---|---|
@@ -44,7 +44,7 @@ Seeded items on the board:
 - **Prompt, turn 1:** "Show me the email Zero wants to send the guest at Seafront Studio 2."
 - **Prompt, turn 2:** "Approve it."
 - **Tools triggered:** `ask_agent`, then `answer_agent`
-- **Expected behaviour:** Turn 1 shows the preview: the recipient's role (guest) and reference code, the property, the send time in the firm's time zone (Europe/London) and the full message, with the guest's name and contact details replaced by the reference code. Turn 2 approves with the item id and version code from turn 1 and returns `done`. The email arrives in the demo guest inbox, and cf0's Approvals page records the approval as made from the assistant.
+- **Expected behaviour:** Turn 1 shows the preview: the recipient's role (guest) and reference code, the property, the send time in the firm's time zone (Europe/London) and the full message, with the guest's name and contact details replaced by the reference code. Turn 2 approves with the item id and version code from turn 1 and returns `done`. cf0 records the approval as made from the assistant, and Zero sends the email on cf0's next send run, within 10 minutes.
 
 ### P4. Answer Zero's question
 
@@ -94,7 +94,7 @@ About four minutes, recorded in a ChatGPT Business workspace with developer mode
 2. **0:20 to 0:50. Connect.** Add cf0 Zero, sign in with the reviewer's password (no code), pick cf0 Demo Lettings on the consent screen, return to ChatGPT.
 3. **0:50 to 1:20. P1.** Ask what is waiting. Point at the reference codes and that no name or contact detail appears.
 4. **1:20 to 1:50. P2.** Hand Zero the Harbour View task. Show the plan, then the new task on cf0.ai/app/tasks. Repeat the prompt to show `already_given`.
-5. **1:50 to 2:30. P3.** Preview the guest email, approve it, then show it in the demo guest inbox and on cf0's Approvals page.
+5. **1:50 to 2:30. P3.** Preview the guest email, approve it, then show the task on cf0.ai/app/tasks. The email leaves on cf0's next send run, within 10 minutes.
 6. **2:30 to 2:55. P4.** Answer Zero's question; show the reply waiting for approval in cf0.
 7. **2:55 to 3:15. P5.** Cancel the Riverside 7 task; show it cancelled on the board.
 8. **3:15 to 3:50. N1 to N3.** The Zillow leads refusal, the phone number refusal, and the 15-person notice sent to cf0.ai.
@@ -105,18 +105,18 @@ Upload the recording somewhere the reviewer can open without signing in, and pas
 ## Reviewer account notes (no secrets)
 
 - **Accounts:** two Clerk users on cf0 production, each an admin of cf0 Demo Lettings and one of its named approvers, because approving an action needs an admin. One is for OpenAI, one for Anthropic.
-- **Sign-in:** https://cf0.ai/login with email and password. No MFA, no email or SMS code, no magic link, no new-device check. Proved in a fresh browser before each submission (build map T9.2).
+- **Sign-in:** https://cf0.ai/login with email and password. No MFA, no email or SMS code, no magic link, no new-device check. Cloudflare may show a "Verify you are human" box after the email; a person ticks it. Proved on 2026-10-06 for both accounts with a password-only sign-in from a new client.
 - **Connect flow:** the assistant opens cf0's sign-in, then a consent screen; pick **cf0 Demo Lettings** if asked for an organisation.
 - **Where credentials live:** only in the OpenAI dashboard's Review details form and the Anthropic portal's Test & launch step. Never in this repository, the ZIP or email.
 - **Rotation:** Louis rotates both passwords after each review and updates the dashboards.
-- **Data:** all records are synthetic and every recipient is a cf0-owned inbox. The firm's account is set up by cf0 ops, so reviewers never see a checkout or payment screen.
+- **Data:** all records are synthetic and every recipient address is on a cf0-owned domain. The firm's account is set up by cf0 ops, so reviewers never see a checkout or payment screen.
 - **Contact for reviewers:** support@cf0.ai.
 
 ## Country availability
 
 All five cf0 markets (founder decision L5, 2026-10-02): the EU and EEA, the UK, the US, Canada and Asia.
 
-Paste into the dashboard's country availability, or into `publication.countries`:
+Set in `plugin.json` as `publication.countries`, so the upload imports it:
 
 ```
 AT,BE,BG,CY,CZ,DE,DK,EE,ES,FI,FR,GR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK,IS,LI,NO,GB,US,CA,SG,MY,ID,PH,IN,JP,KR,TH
@@ -125,4 +125,4 @@ AT,BE,BG,CY,CZ,DE,DK,EE,ES,FI,FR,GR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK
 - EU27: AT BE BG CY CZ DE DK EE ES FI FR GR HR HU IE IT LT LU LV MT NL PL PT RO SE SI SK
 - EEA outside the EU: IS LI NO
 - UK: GB. US: US. Canada: CA
-- Asia: SG MY ID PH IN JP KR TH. These are the Asian markets named in cf0's 2026-10-01 market research (the WhatsApp go-live order and the PDPA, APPI, DPDP and PIPA law list). Mainland China is out. Luca confirms or edits this row before submitting.
+- Asia: SG MY ID PH IN JP KR TH. These are the Asian markets named in cf0's 2026-10-01 market research (the WhatsApp go-live order and the PDPA, APPI, DPDP and PIPA law list). Mainland China is out.

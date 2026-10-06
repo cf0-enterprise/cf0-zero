@@ -61,7 +61,7 @@
               "description": "Preview, then approve, an ordinary email to one person. Two turns: this prompt, then \"Approve it.\"",
               "prompt": "Show me the email Zero wants to send the guest at Seafront Studio 2.",
               "tools_triggered": "ask_agent, answer_agent",
-              "expected_behavior": "Turn 1 shows the preview: the recipient's role (guest) and reference code, the property, the send time in the firm's time zone (Europe/London) and the full message, with the guest's name and contact details replaced by the reference code. Turn 2, \"Approve it.\", approves with the item id and version code from turn 1 and returns done. The email arrives in the demo guest inbox, and cf0's Approvals page records the approval as made from the assistant."
+              "expected_behavior": "Turn 1 shows the preview: the recipient's role (guest) and reference code, the property, the send time in the firm's time zone (Europe/London) and the full message, with the guest's name and contact details replaced by the reference code. Turn 2, \"Approve it.\", approves with the item id and version code from turn 1 and returns done. cf0 records the approval as made from the assistant, and Zero sends the email on cf0's next send run, within 10 minutes."
             },
             {
               "description": "Answer a question Zero asked about a task.",
