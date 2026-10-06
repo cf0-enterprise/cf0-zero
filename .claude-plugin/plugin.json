@@ -11,5 +11,10 @@
   "homepage": "https://cf0.ai/support#assistants",
   "repository": "https://github.com/cf0-enterprise/cf0-zero",
   "license": "MIT",
-  "keywords": ["property management", "lettings", "short-term rentals", "maintenance", "tenants", "guests", "owners"]
+  "keywords": ["property management", "lettings", "short-term rentals", "maintenance", "tenants", "guests", "owners"],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://cf0.ai/support#assistants",
+  "supportUrl": "https://cf0.ai/support#assistants",
+  "privacyPolicyUrl": "https://cf0.ai/privacy",
+  "termsOfServiceUrl": "https://cf0.ai/terms"
 }
