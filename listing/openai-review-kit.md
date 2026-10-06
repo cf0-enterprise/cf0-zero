@@ -1,8 +1,8 @@
-# OpenAI review kit: cf0 Zero
+# OpenAI review kit: Zero
 
 What the ChatGPT plugin submission asks for, and why. The five positive and three negative cases, the countries and the release notes are also in `plugin.json`, so the ZIP upload imports them; this file is their source. Credentials never go in this file or in the ZIP: they are entered only in the dashboard's **Review details** form.
 
-- Plugin: `cf0-zero`, display name "cf0 Zero", one MCP server at `https://api.cf0.ai/mcp`.
+- Plugin: `cf0-zero`, display name "Zero", one MCP server at `https://api.cf0.ai/mcp`.
 - Tools: `ask_agent`, `give_agent_task`, `answer_agent`.
 - Support page: https://cf0.ai/support#assistants
 
@@ -88,10 +88,10 @@ Seeded items on the board:
 
 ## Video walkthrough script
 
-About four minutes, recorded in a ChatGPT Business workspace with developer mode on and the reviewer account. Show no billing page and no checkout.
+About four minutes, recorded in ChatGPT on the web with the reviewer account. The MCP server is added under Plugins, then Add, then Add custom MCP server. Show no billing page and no checkout.
 
 1. **0:00 to 0:20. Context.** cf0.ai/app/tasks for cf0 Demo Lettings, showing T1 to T3 and the waiting items. Voice-over: "Zero is the firm's AI property manager in cf0. This plugin lets staff work with it from ChatGPT."
-2. **0:20 to 0:50. Connect.** Add cf0 Zero, sign in with the reviewer's password (no code), pick cf0 Demo Lettings on the consent screen, return to ChatGPT.
+2. **0:20 to 0:50. Connect.** Add Zero, sign in with the reviewer's password (no code), pick cf0 Demo Lettings on the consent screen, return to ChatGPT.
 3. **0:50 to 1:20. P1.** Ask what is waiting. Point at the reference codes and that no name or contact detail appears.
 4. **1:20 to 1:50. P2.** Hand Zero the Harbour View task. Show the plan, then the new task on cf0.ai/app/tasks. Repeat the prompt to show `already_given`.
 5. **1:50 to 2:30. P3.** Preview the guest email, approve it, then show the task on cf0.ai/app/tasks. The email leaves on cf0's next send run, within 10 minutes.
@@ -105,7 +105,7 @@ Upload the recording somewhere the reviewer can open without signing in, and pas
 ## Reviewer account notes (no secrets)
 
 - **Accounts:** two Clerk users on cf0 production, each an admin of cf0 Demo Lettings and one of its named approvers, because approving an action needs an admin. One is for OpenAI, one for Anthropic.
-- **Sign-in:** https://cf0.ai/login with email and password. No MFA, no email or SMS code, no magic link, no new-device check. Cloudflare may show a "Verify you are human" box after the email; a person ticks it. Proved on 2026-10-06 for both accounts with a password-only sign-in from a new client.
+- **Sign-in:** https://cf0.ai/login with email and password. cf0 offers an email code first, so the reviewer chooses "Use another method", then "Sign in with your password". No MFA, no SMS code, no magic link, no new-device check. Cloudflare may show a "Verify you are human" box after the email; a person ticks it. Proved on 2026-10-06 for both accounts with a password-only sign-in from a new client.
 - **Connect flow:** the assistant opens cf0's sign-in, then a consent screen; pick **cf0 Demo Lettings** if asked for an organisation.
 - **Where credentials live:** only in the OpenAI dashboard's Review details form and the Anthropic portal's Test & launch step. Never in this repository, the ZIP or email.
 - **Rotation:** Louis rotates both passwords after each review and updates the dashboards.

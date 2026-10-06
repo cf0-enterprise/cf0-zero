@@ -1,4 +1,4 @@
-# Anthropic kit: cf0 Zero
+# Anthropic kit: Zero
 
 Two submissions in the developer portal at claude.ai/directory/manage, paired once both exist:
 
@@ -17,7 +17,7 @@ On 2026-10-02 Luca emailed `mcp-review@anthropic.com` from luca@cf0.ai to ask wh
 
 | Field | Value |
 |---|---|
-| Server name (max 100) | cf0 Zero |
+| Server name (max 100) | Zero |
 | One-liner (max 200) | Zero is your firm's AI property manager in cf0. See what it is handling, hand it a task about a tenant, guest or owner, and approve its emails before they go out. |
 | Categories | Productivity; Business (check the portal's list) |
 | Documentation URL | https://cf0.ai/support#assistants |
@@ -67,13 +67,13 @@ The expected result of each is in `openai-review-kit.md` (P1 to P5), and three r
 - **Firm:** cf0 Demo Lettings, a standard test account with synthetic sample data (the records and seeded items listed in `openai-review-kit.md`). The Claude reviewer has its own firm and its own cf0-owned domain (`contacts-claude.cf0.ai`), separate from the ChatGPT reviewer's, so no review run reaches a real person.
 - **User:** a Clerk user on cf0 production who is an admin of cf0 Demo Lettings and one of its named approvers, because approving an action needs an admin.
 - **Sign-in:** https://cf0.ai/login with email and password. No MFA, no email or SMS code, no magic link. Cloudflare may show a "Verify you are human" box after the email; a person ticks it.
-- **Steps for the reviewer:** in Claude, open Customize, then Connectors, choose Add custom connector and paste `https://api.cf0.ai/mcp` (or add cf0 Zero from the directory once it is listed). Sign in with the test account, choose cf0 Demo Lettings on the consent screen if asked, then try the example prompts.
+- **Steps for the reviewer:** in Claude, open Customize, then Connectors, choose Add custom connector and paste `https://api.cf0.ai/mcp` (or add Zero from the directory once it is listed). Sign in with the test account, choose cf0 Demo Lettings on the consent screen if asked, then try the example prompts.
 - **Where credentials live:** only in the Test & launch step. Louis rotates the password after each review.
 - **Tools run before submitting:** confirm each of the three tools ran from a Claude conversation against the demo firm, as the Test & launch step asks.
 
 ## Connector compliance: the seven acknowledgements
 
-| Acknowledgement | How cf0 Zero meets it |
+| Acknowledgement | How Zero meets it |
 |---|---|
 | Directory guidelines | Follows the Software Directory Terms and Policy; every tool has a title and `readOnlyHint` and `destructiveHint`; read and write tools are separate; tool names are under 64 characters. |
 | First-party API usage | The server calls only cf0's own API and data. It is not a pass-through to a property management system or any third-party service. |

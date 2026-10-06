@@ -1,4 +1,4 @@
-# cf0 Zero
+# Zero
 
 Zero is an AI property manager, an AI employee that works inside [cf0](https://cf0.ai) for property management, lettings and short-term rental firms. This plugin lets your team work with Zero from Claude, ChatGPT or Codex.
 

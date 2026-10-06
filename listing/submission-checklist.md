@@ -1,4 +1,4 @@
-# Submission checklist: cf0 Zero
+# Submission checklist: Zero
 
 For Luca and Louis. Work top to bottom; each line names its owner. Founder decision L1: submit as soon as the build passes the review checks, and run the paid test while listed.
 
@@ -27,7 +27,7 @@ For Luca and Louis. Work top to bottom; each line names its owner. Founder decis
 - [x] **Luca:** build the ZIP from the repository root with only the package files:
   `zip -r cf0-zero.zip plugin.json mcp.json skills assets README.md LICENSE -x '*.DS_Store'`
 - [ ] **Luca:** Plugins, Upload plugin, choose the ZIP. Resolve every required finding under Metadata & Skills and MCPs.
-- [ ] **Luca:** check the imported listing: display name "cf0 Zero", subtitle, description, category (fall back to Productivity if the dashboard has nothing closer), three starter prompts, both icons, and that commerce is off.
+- [ ] **Luca:** check the imported listing: display name "Zero", subtitle, description, category (fall back to Productivity if the dashboard has nothing closer), three starter prompts, both icons, and that commerce is off.
 - [ ] **Luca:** verify the domain with the challenge token (T9.4).
 - [ ] **Luca:** set up OAuth with CIMD against `https://clerk.cf0.ai`.
 - [ ] **Luca:** Review details: enter the 5 positive and 3 negative cases from `openai-review-kit.md`, the video URL, the annotation justifications, and the OpenAI reviewer's credentials and sign-in steps.
