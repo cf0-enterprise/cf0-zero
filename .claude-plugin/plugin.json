@@ -1,8 +1,8 @@
 {
   "name": "cf0-zero",
   "displayName": "cf0 Zero",
-  "version": "1.0.1",
-  "description": "Talk to Zero, your property management firm's AI assistant in cf0: ask what it is handling, hand it one task about one person on your firm's records, and answer what it is waiting on.",
+  "version": "1.0.2",
+  "description": "Zero is your firm's AI property manager in cf0. See what it is handling, hand it a task about a tenant, guest or owner, and approve its emails before they go out.",
   "author": {
     "name": "cf0",
     "email": "support@cf0.ai",

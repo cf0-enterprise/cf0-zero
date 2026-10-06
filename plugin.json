@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cf0-zero",
-  "version": "1.0.1",
-  "description": "Talk to Zero, your property management firm's AI assistant in cf0: ask what it is handling, hand it one task about one person on your firm's records, and answer what it is waiting on.",
+  "version": "1.0.2",
+  "description": "Zero is your firm's AI property manager in cf0. See what it is handling, hand it a task about a tenant, guest or owner, and approve its emails before they go out.",
   "author": {
     "name": "cf0",
     "email": "support@cf0.ai",
@@ -16,15 +16,15 @@
     "com.openai": {
       "interface": {
         "displayName": "cf0 Zero",
-        "shortDescription": "Hand property tasks to Zero",
-        "longDescription": "cf0 Zero connects your firm's Zero, the AI assistant in cf0, to this chat. It is for staff at property management, lettings and short-term rental firms that already work in cf0.\n\nAsk Zero what it is handling, what is waiting on you, and where a task stands. Asking changes nothing and contacts no one.\n\nHand Zero one task about one person already on your firm's records: arranging access with a tenant for a repair visit, confirming a check-out time with a guest, or telling an owner about booked work. Zero takes maintenance and access, move-out and turnover, owner updates and stay operations. It works out the steps and drafts one email from your firm's own Zero mailbox, sent only after someone at your firm approves it.\n\nAnswer what Zero is waiting on: approve or decline an ordinary email after a preview of the person's role, the property, the send time in your firm's time zone and the full message; answer a question Zero asked about your task; or cancel a task.\n\nLimits: people on your firm's records appear as reference codes with their role, and contact details and access codes are hidden. A name that is not on your firm's records, such as one typed into the chat, is passed back as written. Zero never uses a phone number or email address typed into the chat, and never takes leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. Messages to 10 or more people, documents and sensitive content are approved only on cf0.ai. Zero reaches people by email only.\n\nYou need a cf0 account as a member of a firm cf0 has approved. Giving Zero tasks also needs an admin to set up billing and Zero's mailbox on cf0.ai.",
+        "shortDescription": "Your AI property manager",
+        "longDescription": "Zero is an AI property manager, an AI employee that works inside cf0 for property management, lettings and short-term rental firms. In cf0, Zero handles your firm's inbound messages and keeps its work on your firm's task board. This plugin lets your team work with Zero from chat.\n\nAsk Zero what it is handling, what is waiting on you and where a task stands. Asking changes nothing and contacts no one.\n\nHand Zero the follow-ups your team would otherwise chase by email: arranging access with a tenant for a repair, confirming a check-out time with a guest, or telling an owner about booked work. Each task is about one person on your firm's records. Zero plans it and drafts an email from your firm's own Zero mailbox. Someone at your firm previews and approves the email, in chat or on cf0.ai, and nothing is sent before that. Zero then sends it, reads the reply and closes the task once the person confirms. If they suggest a different time or ask something only your team can answer, Zero asks you first and drafts its reply for your approval.\n\nEvery task stays on your firm's board in cf0, with a record of what Zero sent and what is still open.\n\nZero takes maintenance and access, move-out and turnover, owner updates and stay operations. It does not take leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. People on your records appear as reference codes with their role, and their contact details and access codes stay hidden. Zero never uses a phone number or email address typed into the chat, and it reaches people by email only. Messages to 10 or more people, documents and sensitive content can only be approved on cf0.ai.\n\nYou need a cf0 account as a member of a firm cf0 has approved. Before Zero can take tasks, an admin sets up billing and Zero's mailbox on cf0.ai.",
         "developerName": "cf0",
         "category": "Productivity",
         "capabilities": [
-          "Answer questions about Zero's tasks and what is waiting on you",
-          "Hand Zero one task about one person on your firm's records",
-          "Approve or decline an ordinary email Zero proposed, after a preview",
-          "Answer a question Zero asked about your task",
+          "See what Zero is handling and what is waiting on you",
+          "Hand Zero a task about one tenant, guest or owner on your records",
+          "Preview and approve Zero's emails before they go out",
+          "Answer Zero when someone proposes a different time or asks a question",
           "Cancel a task you gave Zero"
         ],
         "websiteURL": "https://cf0.ai",

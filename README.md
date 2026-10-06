@@ -1,6 +1,12 @@
 # cf0 Zero
 
-cf0 Zero lets staff at a property management firm talk to Zero, their firm's AI assistant in [cf0](https://cf0.ai), from their AI assistant. Zero's work stays on the firm's task board in cf0, with the same approvals and the same record of what it sent and when.
+Zero is an AI property manager, an AI employee that works inside [cf0](https://cf0.ai) for property management, lettings and short-term rental firms. This plugin lets your team work with Zero from Claude, ChatGPT or Codex.
+
+## How it works
+
+You hand Zero the follow-ups your team would otherwise chase by email, such as arranging access with a tenant for a repair, confirming a check-out time with a guest, or telling an owner about booked work. Each task is about one person on your firm's records. Zero plans it and drafts an email from your firm's own Zero mailbox. Someone at your firm previews and approves the email, in chat or on cf0.ai, and nothing is sent before that. Zero then sends it, reads the reply and closes the task once the person confirms. If they suggest a different time or ask something only your team can answer, Zero asks you first and drafts its reply for your approval.
+
+Every task stays on your firm's board in cf0, with a record of what Zero sent and when.
 
 ## What it does
 
