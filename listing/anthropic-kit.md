@@ -32,7 +32,7 @@ On 2026-10-02 Luca emailed `mcp-review@anthropic.com` from luca@cf0.ai to ask wh
 
 > cf0 Zero connects your firm's Zero, the AI assistant in cf0, to Claude. It is for staff at property management, lettings and short-term rental firms that work in cf0.
 >
-> Ask Zero what it is handling, what is waiting on you, and where a task, person or property stands. Asking changes nothing and contacts no one.
+> Ask Zero what it is handling, what is waiting on you, and where a task stands. Asking changes nothing and contacts no one.
 >
 > Hand Zero one task about one person already on your firm's records, such as arranging access with a tenant for a repair visit, confirming a check-out time with a guest, or telling an owner about booked work. Zero drafts one email from your firm's own Zero mailbox and sends it only after someone at your firm approves it.
 >
