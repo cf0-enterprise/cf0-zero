@@ -10,31 +10,37 @@ Zero is the AI property manager of the user's firm in cf0, an AI employee that d
 | Tool | What it does | Changes anything? |
 |---|---|---|
 | `ask_agent` | Reads Zero's board: its tasks, the actions waiting for approval and the questions Zero asked the user | No. It contacts no one |
-| `give_agent_task` | Hands Zero one task about one person on the firm's records | Yes. Zero puts it on the board and drafts one email |
+| `give_agent_task` | Hands Zero one task about one person: someone on the firm's records, or someone new that the user agrees to add | Yes. Zero puts it on the board and drafts one email |
 | `answer_agent` | Approves or declines a proposed action, answers Zero's question, or cancels a task | Yes |
 
 ## What the plugin covers
 
-With the plugin, Zero works the follow-ups that staff hand it, by email from the firm's own Zero address: access for repairs, check-out times, owner updates, move-out and turnover. Staff approve each email. A firm on the plugin pays per completed task and sees its own rate on cf0.ai. A firm on a cf0 contract is billed under its contract. Never state a figure.
+With the plugin, Zero works the follow-ups that staff hand it, by email from the firm's own Zero address: access for repairs, check-out times, owner updates, move-out and turnover. Staff approve each email.
 
-Full Zero also answers the firm's phone line, WhatsApp and inbox, and runs guest agents. It comes with a cf0 contract. If the user asks for any of that, tell them so, and that they can book a demo at cf0.ai to talk about a contract.
+The plugin does not answer the firm's phone line, WhatsApp or inbox, and it does not run guest agents. Those come with a cf0 contract and are set up on cf0.ai. If the user asks for them, say so, and give the link https://cf0.ai/support#assistants, which compares the plugin and a cf0 contract.
+
+If the user asks what Zero costs, say that a firm on the plugin pays per completed task, under a monthly cap it sets, and sees its own rate on cf0.ai. A firm on a cf0 contract is billed under its contract. Never state a figure.
 
 ## Reading Zero's work
 
 Use `ask_agent` for any question about Zero's work: what is open, what is waiting on the user, where one task stands. Pass the user's question in their own words. Pass `task_id` when the user means a task from an earlier answer.
 
-People on the firm's records appear as reference codes such as `p_k7mq2xrb4a`, with their role (tenant, guest, owner). Email addresses, phone numbers and access codes are hidden. Show the codes as they come. Do not guess or ask for the real names or contact details behind them.
+People on the firm's records appear as reference codes such as `p_k7mq2xrb4a`, with their role (tenant, guest, owner or contractor). Email addresses, phone numbers and access codes are hidden. Show the codes as they come. Do not guess or ask for the real names or contact details behind them.
 
 Each item in the answer carries an item id and a version code. Keep them: `answer_agent` needs both, taken from Zero's latest answer.
 
 ## Handing Zero a task
 
-Use `give_agent_task` when the user wants Zero to do something with one person on the firm's records.
+Use `give_agent_task` when the user wants Zero to do something with one person.
 
 - `task`: what the user wants done and what counts as done, as they would tell a colleague.
-- `people`: exactly one entry, the person's name as the firm's records have it or a `p_` code from an earlier answer. Never a phone number or email address, even if the user typed one; ask the user for the person's name on record instead.
+- `people`: exactly one entry, the person's name as the firm's records have it or a `p_` code from an earlier answer. Never a phone number or email address.
+- `new_person`: in place of `people`, for a person who is not on the firm's records yet. It holds their `name`, `email`, `role` (`tenant`, `guest`, `owner` or `contractor`) and `property`, as the user gave them. Ask the user for a missing detail rather than guessing it. Never a phone number.
+- `confirm_code`: only with `new_person`, on the second call, after the user agrees to the details. See `confirm_person` below.
 - `property`: the firm's name for the property or unit, when the user gave one.
 - `deadline`: an ISO 8601 date or time, when the user gave one.
+
+If the user names someone only by email address, ask for their name on the firm's records. If they are not on the records, offer to add them with `new_person`.
 
 Zero takes four kinds of work: maintenance and access, move-out and turnover, owner updates, and stay operations. It does not take leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. If the user's request is one of those, tell them Zero does not do it rather than rewording it to fit. In an emergency, tell the user to call the emergency services and their firm's emergency line now.
 
@@ -42,8 +48,9 @@ For work involving several people, give one task per person. Giving the same tas
 
 The result's `status` says what happened:
 
-- `accepted`: Zero has the task. Show the user the task id and Zero's `plan`. Nothing is sent until someone at the firm approves Zero's email.
+- `accepted`: Zero has the task. Show the user the task id, Zero's `plan` and the `reason`. Nothing is sent until someone at the firm approves Zero's email.
 - `already_given`: the same task was given earlier today. Show the existing task.
+- `confirm_person`: Zero has added no one yet. Show the user the name, email, role and property in `new_person`, and ask them to agree. Only after they agree, call `give_agent_task` again with the same `task`, the same `new_person` and the `confirm_code`. If the user changes a detail, call again with the new details and no code.
 - `refused`: Zero will not take it. Show the `reason` as written. Nothing was created.
 - `needs_setup` or `limit_reached`: the firm has something to finish on cf0.ai. Show the `reason` and the `open_in_cf0` link.
 - `try_again`: Zero could not take the task just now. Offer to try again in a minute.

@@ -4,14 +4,14 @@ Zero is an AI property manager, an AI employee that works inside [cf0](https://c
 
 ## How it works
 
-You hand Zero the follow-ups your team would otherwise chase by email, such as arranging access with a tenant for a repair, confirming a check-out time with a guest, or telling an owner about booked work. Each task is about one person on your firm's records. Zero plans it and drafts an email from your firm's own Zero mailbox. Someone at your firm previews and approves the email, in chat or on cf0.ai, and nothing is sent before that. Zero then sends it, reads the reply and closes the task once the person confirms. If they suggest a different time or ask something only your team can answer, Zero asks you first and drafts its reply for your approval.
+You hand Zero the follow-ups your team would otherwise chase by email, such as arranging access with a tenant for a repair, confirming a check-out time with a guest, or telling an owner about booked work. Each task is about one person on your firm's records. To add someone new, Zero first shows you their name, email, role and property, and adds them only after you agree. Zero plans the task and drafts an email from your firm's own Zero mailbox. Someone at your firm previews and approves the email, in chat or on cf0.ai, and nothing is sent before that. Zero then sends it, reads the reply and closes the task once the person confirms. If they suggest a different time or ask something only your team can answer, Zero asks you first and drafts its reply for your approval.
 
 Every task stays on your firm's board in cf0, with a record of what Zero sent and when.
 
 ## What it does
 
 - **Ask Zero** (`ask_agent`, read-only): what Zero is handling, what is waiting on you, and where a task stands. It changes nothing and contacts no one.
-- **Give Zero a task** (`give_agent_task`): hand Zero one task about one person already on your firm's records, such as arranging access with a tenant for a repair visit, confirming a check-out time with a guest or telling an owner about booked work. Zero drafts one email from your firm's own Zero mailbox and sends it only after someone at your firm approves it.
+- **Give Zero a task** (`give_agent_task`): hand Zero one task about one person on your firm's records, or about someone new that you agree to add, such as arranging access with a tenant for a repair visit, confirming a check-out time with a guest or telling an owner about booked work. Zero drafts one email from your firm's own Zero mailbox and sends it only after someone at your firm approves it.
 - **Answer Zero** (`answer_agent`): approve or decline an ordinary email after a preview, answer a question Zero asked about your task, or cancel a task.
 
 People on your firm's records appear as reference codes such as `p_k7mq2xrb4a` with their role, and contact details and access codes are hidden. A name that is not on your firm's records, such as one typed into the chat, is passed back as written. Zero never takes leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. Messages to 10 or more people, documents and sensitive content can only be approved on cf0.ai.
@@ -34,16 +34,16 @@ The plugin runs no local code, hooks or commands. Its one connection is the remo
 | | Plugin | cf0 contract |
 |---|---|---|
 | What Zero does | Works the follow-ups your staff hand it: access for repairs, check-out times, owner updates, move-out and turnover | Answers your tenants, guests and owners, runs guest agents and works its follow-ups |
-| Who starts the work | Your staff, from chat. They approve each email | Anyone who calls, messages or emails your firm, and your staff |
-| Channels | Email, from your firm's own Zero address on cf0 | Your phone line, WhatsApp and inbox |
+| Who starts the work | Your staff, from chat or cf0.ai. They approve each email | Anyone who calls, messages or emails your firm, and your staff |
+| Channels | Email only, from your firm's own Zero address | Your phone line, WhatsApp and inbox |
 | Setup | On cf0.ai, in minutes | cf0 onboards your firm with you |
-| How your firm pays | Per completed task, under a monthly cap it sets. Unconfirmed tasks cost nothing | Under your cf0 contract |
+| How your firm pays | Only for tasks the person confirms, under a monthly cap it sets. Card on file, billed monthly | Under your cf0 contract |
 
 To talk to cf0 about a contract, book a demo at [cf0.ai](https://cf0.ai).
 
 ## Before you connect
 
-You need a cf0 account as a member of a firm on cf0. Before Zero takes tasks, an admin sets up billing on cf0.ai (a firm on a cf0 contract skips this step), cf0 gives Zero an email address for your firm, and your team adds the people Zero emails. Until then, every answer lists the steps that are missing, with a link to Setup on cf0.ai.
+You need a cf0 account as a member of a firm on cf0. Before Zero takes tasks, an admin sets up billing on cf0.ai (a firm on a cf0 contract skips this step), cf0 gives Zero an email address for your firm, and your team adds the people Zero emails, on cf0.ai or from chat. Until then, every answer lists the steps that are missing, with a link to Setup on cf0.ai.
 
 Setup steps for each assistant are at [cf0.ai/support](https://cf0.ai/support#assistants).
 

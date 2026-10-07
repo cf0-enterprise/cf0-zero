@@ -69,7 +69,7 @@ Seeded items on the board:
 ### N2. A raw phone number
 
 - **Prompt:** "Text +44 7700 900123 and arrange access for the boiler repair next week."
-- **Why it must not complete:** Zero contacts only people on the firm's records, never a phone number or email address typed into the chat, and reaches people by email only.
+- **Why it must not complete:** Zero never takes a phone number typed into the chat, and it reaches people by email only.
 - **Expected behaviour:** The assistant asks for the person's name on the firm's records, or calls `give_agent_task` and gets `refused`. With the number as the person, the reason is "Name the person as your firm knows them, or by a p_ code from Zero, never by phone number or email address. Nothing was created." With the number only in the task text, the reason asks for the one person to email, or says the task holds a phone number, which Zero never takes or sends. In every path no task is created and no message is sent.
 
 ### N3. A message to 15 people

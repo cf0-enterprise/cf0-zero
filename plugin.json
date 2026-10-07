@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cf0-zero",
   "version": "1.0.6",
-  "description": "Zero is your firm's AI property manager in cf0. Hand it follow-ups with tenants, guests and owners, approve its emails before they go out, and pay per completed task. Full Zero comes with a cf0 contract.",
+  "description": "Zero is your firm's AI property manager in cf0. Hand it follow-ups with tenants, guests and owners by email, approve each email before it goes out, and pay per completed task.",
   "author": {
     "name": "cf0",
     "email": "support@cf0.ai",
@@ -17,7 +17,7 @@
       "interface": {
         "displayName": "Zero",
         "shortDescription": "Your AI property manager",
-        "longDescription": "Zero is an AI property manager, an AI employee that works inside cf0 for property management, lettings and short-term rental firms. This plugin lets your team hand Zero its follow-ups from chat, and Zero keeps the work on your firm's task board in cf0.\n\nAsk Zero what it is handling, what is waiting on you and where a task stands. Asking changes nothing and contacts no one.\n\nHand Zero the follow-ups your team would otherwise chase by email: arranging access with a tenant for a repair, confirming a check-out time with a guest, or telling an owner about booked work. Each task is about one person on your firm's records. Zero plans it and drafts an email from your firm's own Zero mailbox. Someone at your firm previews and approves the email, in chat or on cf0.ai, and nothing is sent before that. Zero then sends it, reads the reply and closes the task once the person confirms. If they suggest a different time or ask something only your team can answer, Zero asks you first and drafts its reply for your approval.\n\nZero takes maintenance and access, move-out and turnover, owner updates and stay operations. It does not take leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. People on your records appear as reference codes with their role, and their contact details and access codes stay hidden. Zero never uses a phone number or email address typed into the chat, and it reaches people by email only. Messages to 10 or more people, documents and sensitive content can only be approved on cf0.ai.\n\nSetup takes minutes on cf0.ai: an admin sets up billing, cf0 gives Zero an email address for your firm, and your team adds the people Zero emails. Your firm pays per completed task, under a monthly cap it sets, and nothing for unconfirmed tasks.\n\nFull Zero also answers your firm's phone line, WhatsApp and inbox, and runs guest agents. It comes with a cf0 contract. Book a demo at cf0.ai to talk about one.",
+        "longDescription": "Zero is an AI property manager, an AI employee that works inside cf0 for property management, lettings and short-term rental firms. This plugin lets your team hand Zero its follow-ups from chat, and Zero keeps the work on your firm's task board in cf0.\n\nAsk Zero what it is handling, what is waiting on you and where a task stands. Asking changes nothing and contacts no one.\n\nHand Zero the follow-ups your team would otherwise chase by email: arranging access with a tenant for a repair, confirming a check-out time with a guest, or telling an owner about booked work. Each task is about one person on your firm's records. Zero plans it and drafts an email from your firm's own Zero mailbox. Someone at your firm previews and approves the email, in chat or on cf0.ai, and nothing is sent before that. Zero then sends it, reads the reply and closes the task once the person confirms. If they suggest a different time or ask something only your team can answer, Zero asks you first and drafts its reply for your approval.\n\nZero takes maintenance and access, move-out and turnover, owner updates and stay operations. It does not take leasing, leads, cold outreach, marketing, tenant screening, rent or arrears, payments, legal notices or emergencies. People on your records appear as reference codes with their role, and their contact details and access codes stay hidden. Zero never takes a phone number, and it reaches people by email only. Zero adds someone new from chat only after you agree to their name, email, role and property. Messages to 10 or more people, documents and sensitive content can only be approved on cf0.ai.\n\nSetup takes minutes on cf0.ai: an admin sets up billing, cf0 gives Zero an email address for your firm, and your team adds the people Zero emails, on cf0.ai or from chat. Your firm pays per completed task, under a monthly cap it sets.\n\nWith a cf0 contract, Zero also answers your firm's phone line, WhatsApp and inbox, and runs guest agents.",
         "developerName": "cf0",
         "category": "Productivity",
         "capabilities": [
@@ -82,7 +82,7 @@
               "prompt": "Email these 40 Zillow leads about our new listing and book them in for viewings."
             },
             {
-              "description": "A raw phone number. Zero contacts only people on the firm's records, never a phone number or email address typed into the chat, and reaches people by email only. The assistant asks for the person's name on the firm's records, or give_agent_task returns refused. No task is created and no message is sent.",
+              "description": "A raw phone number. Zero never takes a phone number typed into the chat, and it reaches people by email only. The assistant asks for the person's name on the firm's records, or give_agent_task returns refused. No task is created and no message is sent.",
               "prompt": "Text +44 7700 900123 and arrange access for the boiler repair next week."
             },
             {
@@ -92,7 +92,7 @@
           ]
         },
         "commerce": false,
-        "commerce_description": "Zero sells nothing in the chat: it shows no prices or plans, links to no checkout and takes no payment.",
+        "commerce_description": "Zero sells nothing in the chat: it states no price, starts no subscription, links to no checkout and takes no payment.",
         "demo_recording_url": "https://media.cf0.ai/review/zero-chatgpt-walkthrough.mp4"
       },
       "publication": {

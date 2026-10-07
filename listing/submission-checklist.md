@@ -13,7 +13,8 @@ For Luca and Louis. Work top to bottom; each line names its owner. Founder decis
 - [ ] **Agent or Louis:** with `CF0_BILLING=stub` and the reach variables, run `./c demo-firm`, then `./c assistant-probe --suite review` and `--suite gates` (`--url http://localhost:<port>/mcp --stub-port <port>`). Both exit 0. Both write local D1, so they never run against production. Then do the manual production smoke in listing decision clause 7.
 - [ ] **Luca:** counsel's written sign-off on the listing questions, the terms section 10 rewrite and the privacy update (T8.3). T9.6 depends on it in the build map; decide whether L1 waives it.
 - [x] **Anyone:** in this repository, run `claude plugin validate .` (expect "Validation passed") and `scripts/check-no-price.sh` (expect 8 fixtures caught and 0 hits).
-- [x] **Luca:** pages live and identical in wording to the listing: https://cf0.ai/support#assistants, https://cf0.ai/privacy, https://cf0.ai/terms. No price on any of them during the price test (Q5).
+- [ ] **Luca:** pages live and identical in wording to the listing: https://cf0.ai/support#assistants, https://cf0.ai/privacy, https://cf0.ai/terms. No price on any of them during the price test (Q5). Check again for version 1.0.6: the comparison of the plugin and a cf0 contract, and adding a person from chat.
+- [ ] **Louis:** push version 1.0.6 only after the api with the quick start and `new_person` is deployed. The skill teaches `new_person`, and the live tool refuses that field until then.
 
 ## 2. Video
 
@@ -24,7 +25,8 @@ For Luca and Louis. Work top to bottom; each line names its owner. Founder decis
 
 - [ ] **Luca:** business verification for "cf0, Corp." complete in the OpenAI organization settings.
 - [ ] **Luca:** the listing-only project `cf0-plugins` with global data residency (founder decision L2): no keys, no inference, no data.
-- [x] **Luca:** build the ZIP from the repository root with only the package files:
+- [ ] **Luca:** decide whether the OpenAI description can say "pay per completed task" and name the cf0 contract. OpenAI's plugin guidelines say that descriptions must not "advertise pricing, subscriptions, free trials, discounts, or promotions", and that plugins must not "promote upgrades". If not, remove the sentence about pay and the sentence about the contract from `longDescription`, and the words "and pay per completed task" from the root `description`, before you build the ZIP.
+- [ ] **Luca:** build the ZIP of version 1.0.6 from the repository root with only the package files:
   `zip -r cf0-zero.zip plugin.json mcp.json skills assets README.md LICENSE -x '*.DS_Store'`
 - [ ] **Luca:** Plugins, Upload plugin, choose the ZIP. Resolve every required finding under Metadata & Skills and MCPs.
 - [ ] **Luca:** check the imported listing: display name "Zero", subtitle, description, category (fall back to Productivity if the dashboard has nothing closer), three starter prompts, both icons, and that commerce is off.
