@@ -35,7 +35,7 @@ Seeded items on the board:
 
 ### P2. Hand Zero a task
 
-- **Prompt:** "Ask Zero to arrange access with the tenant at Harbour View Flat 3 for the boiler service on Thursday morning."
+- **Prompt:** "Ask Zero to arrange access with the tenant at Harbour View Flat 3 for the boiler service on Friday morning."
 - **Tools triggered:** `give_agent_task`
 - **Expected behaviour:** The result is `accepted`, with a task id, Zero's plan and a note that nothing is sent until someone at the firm approves Zero's email. The task appears on the board at cf0.ai/app/tasks. Sending the same prompt again the same day returns `already_given` with the same task id, and no second task appears.
 

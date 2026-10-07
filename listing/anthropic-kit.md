@@ -55,7 +55,7 @@ On 2026-10-02 Luca emailed `mcp-review@anthropic.com` from luca@cf0.ai to ask wh
 ## Example prompts (Policy 3.E)
 
 1. "What is waiting on me from Zero today?"
-2. "Ask Zero to arrange access with the tenant at Harbour View Flat 3 for the boiler service on Thursday morning."
+2. "Ask Zero to arrange access with the tenant at Harbour View Flat 3 for the boiler service on Friday morning."
 3. "Show me the email Zero wants to send the guest at Seafront Studio 2." Then: "Approve it."
 4. "Zero has a question about the owner update for Elm Court 5. Tell it Friday afternoon works for us."
 5. "Cancel the gutter cleaning task at Riverside 7."
