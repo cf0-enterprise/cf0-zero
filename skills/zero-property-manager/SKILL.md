@@ -64,7 +64,7 @@ Use `answer_agent` only for an item the user has seen in Zero's latest answer, a
 - `decision`: `approve`, `decline`, `change` or `cancel`.
 - `message`: the user's own words. Required for `change`, and for a question that asks what Zero should tell the person.
 
-Before an approval, show the user the item's preview in full: the person's role and reference code, the property, the send time in your firm's time zone and the full message. Ask the user to confirm. Approving lets Zero send straight away.
+Before an approval, show the user the item's preview in full: the person's role and reference code, the property, the send time in your firm's time zone and the full message. Ask the user to confirm. Zero sends an approved email within 10 minutes, after the email passes its send checks.
 
 Questions take `approve` (agree, or yes), `decline` (no) or `change` (the user's own answer). Zero then writes its reply to the person, and that reply waits for approval like any other email.
 
