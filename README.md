@@ -1,6 +1,6 @@
 # Zero
 
-Zero is an AI property manager, an AI employee that works inside [cf0](https://cf0.ai) for property management, lettings and short-term rental firms. This plugin lets your team work with Zero from Claude, ChatGPT or Codex.
+Zero is an AI property manager, an AI employee that works inside [cf0](https://cf0.ai) for property management, lettings and short-term rental firms. This plugin lets your team hand Zero its follow-ups from Claude, ChatGPT or Codex.
 
 ## How it works
 
@@ -29,9 +29,21 @@ People on your firm's records appear as reference codes such as `p_k7mq2xrb4a` w
 
 The plugin runs no local code, hooks or commands. Its one connection is the remote MCP server at `https://api.cf0.ai/mcp`, operated by cf0. When you connect, your assistant asks you to sign in with your cf0 account through OAuth. Each request then carries your question or task, and Zero answers from your firm's workspace in cf0. Nothing is sent anywhere else.
 
+## The plugin and a cf0 contract
+
+| | Plugin | cf0 contract |
+|---|---|---|
+| What Zero does | Works the follow-ups your staff hand it: access for repairs, check-out times, owner updates, move-out and turnover | Answers your tenants, guests and owners, runs guest agents and works its follow-ups |
+| Who starts the work | Your staff, from chat. They approve each email | Anyone who calls, messages or emails your firm, and your staff |
+| Channels | Email, from your firm's own Zero address on cf0 | Your phone line, WhatsApp and inbox |
+| Setup | On cf0.ai, in minutes | cf0 onboards your firm with you |
+| How your firm pays | Per completed task, under a monthly cap it sets. Unconfirmed tasks cost nothing | Under your cf0 contract |
+
+To talk to cf0 about a contract, book a demo at [cf0.ai](https://cf0.ai).
+
 ## Before you connect
 
-You need a cf0 account as a member of a firm that cf0 has approved. Until then, Zero answers every request by saying cf0 is still reviewing your firm. Giving Zero tasks also needs an admin to set up billing and Zero's mailbox on cf0.ai.
+You need a cf0 account as a member of a firm on cf0. Before Zero takes tasks, an admin sets up billing on cf0.ai (a firm on a cf0 contract skips this step), cf0 gives Zero an email address for your firm, and your team adds the people Zero emails. Until then, every answer lists the steps that are missing, with a link to Setup on cf0.ai.
 
 Setup steps for each assistant are at [cf0.ai/support](https://cf0.ai/support#assistants).
 
